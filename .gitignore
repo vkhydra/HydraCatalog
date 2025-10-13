@@ -1,0 +1,64 @@
+# Arquivo .gitignore para soluções .NET Modernas (incluindo .NET 9)
+
+## Sistema Operacional e Cache Geral
+.DS_Store
+Thumbs.db
+*.swp
+*~
+*.cache
+*.Up2Date
+
+## Pastas de Build e Saída do .NET
+# Contêm binários compilados e arquivos intermediários.
+[Bb]in/
+[Oo]bj/
+
+## Arquivos de Cache e Configuração do .NET
+# Gerados pelo NuGet, build e outras ferramentas.
+project.assets.json
+project.nuget.cache
+*.nuget.props
+*.nuget.targets
+*.csproj.nuget.g.*
+
+## Arquivos de Saída da Compilação
+# Binários, executáveis, símbolos de debug e configurações de tempo de execução.
+*.dll
+*.pdb
+*.exe
+apphost
+*.deps.json
+*.runtimeconfig.json
+*.staticwebassets.*
+
+## IDEs e Editores
+
+# Visual Studio / MSBuild
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.GeneratedMSBuildEditorConfig.editorconfig
+*.tlog
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+rider.project.model.nuget.info
+rider.project.restore.info
+
+## Arquivos de Configuração Local
+# NUNCA versione segredos ou configurações de ambientes específicos.
+appsettings.Development.json
+secrets.json
+.env
+
+## Ferramentas de Teste
+[Tt]est[Rr]esult*/
+TestResults/
+*.coverage
+*.coveragereport
+
+## Publicação
+publish/
+*.pubxml
