@@ -6,18 +6,16 @@ public class StockItem
     public int ProductId { get; private set; }
     public int Quantity { get; private set; }
     
-    private StockItem() { }
-    
-    public StockItem(int productId, int initialQuantity)
+    public StockItem(int productId, int quantity)
     {
-        if (initialQuantity < 0)
+        if (quantity < 0)
         {
             throw new ArgumentException("Initial stock quantity cannot be negative.");
         }
 
         Id = Guid.NewGuid();
         ProductId = productId;
-        Quantity = initialQuantity;
+        Quantity = quantity;
     }
     
     private void ValidatePositiveQuantity(int quantity, string paramName )
