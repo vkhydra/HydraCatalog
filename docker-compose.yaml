@@ -1,17 +1,30 @@
-version: '3.8'
-
 services:
+  # Banco de dados para o Projeto 1 - HydraCatalog
   postgres-catalog-db:
     image: postgres:16-alpine
     container_name: hydracatalog-db
     environment:
       - POSTGRES_USER=hydra_user
-      - POSTG-RES_PASSWORD=hydra_password
+      - POSTGRES_PASSWORD=hydra_password
       - POSTGRES_DB=hydracatalog_dev
     ports:
       - "5432:5432"
     volumes:
       - postgres-catalog-data:/var/lib/postgresql/data
 
+  # Banco de dados para o Projeto 2 - HydraWarehouse (adicionado de volta)
+  postgres-warehouse-db:
+    image: postgres:16-alpine
+    container_name: hydrawarehouse-db
+    environment:
+      - POSTGRES_USER=warehouse_user
+      - POSTGRES_PASSWORD=warehouse_password
+      - POSTGRES_DB=hydrawarehouse_dev
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-warehouse-data:/var/lib/postgresql/data
+
 volumes:
   postgres-catalog-data:
+  postgres-warehouse-data:
